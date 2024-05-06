@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    volumes:
+      - ./src:/app
+      - ./db:/app/data
+    ports:
+      - "4000:4000"
+    command: python app.py
+    environment:
+      - APP_ENV=development
